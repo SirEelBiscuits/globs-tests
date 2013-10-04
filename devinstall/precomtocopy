@@ -1,0 +1,11 @@
+#!/bin/bash
+
+git stash --keep-index -q
+
+devinstall/pre-commit
+result=$?
+
+git stash pop -q
+
+[ $result -ne 0 ] && exit 1
+exit 0

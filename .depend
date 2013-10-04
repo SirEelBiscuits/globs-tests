@@ -1,0 +1,57 @@
+devilwrapper.o: src/globs/graphics/devilwrapper.cpp \
+ src/globs/graphics/devilwrapper.h src/globs/graphics/imageloader.h \
+ src/globs/graphics/../util/log.h
+glwrapper.o: src/globs/graphics/glwrapper.cpp \
+ src/globs/graphics/glwrapper.h src/globs/graphics/../util/stringintern.h \
+ src/globs/graphics/../util/log.h
+modelgl.o: src/globs/graphics/modelgl.cpp src/globs/graphics/modelgl.h \
+ src/globs/graphics/glwrapper.h src/globs/graphics/../util/stringintern.h \
+ src/globs/graphics/../util/log.h src/globs/graphics/model.h \
+ src/globs/graphics/vert.h src/globs/graphics/glm.h \
+ src/globs/graphics/../util/utility.h src/globs/graphics/shader.h \
+ src/globs/graphics/texture.h
+modelloader.o: src/globs/graphics/modelloader.cpp \
+ src/globs/graphics/modelloader.h src/globs/graphics/../util/log.h \
+ src/globs/graphics/modelgl.h src/globs/graphics/glwrapper.h \
+ src/globs/graphics/../util/stringintern.h src/globs/graphics/model.h \
+ src/globs/graphics/vert.h src/globs/graphics/glm.h \
+ src/globs/graphics/../util/utility.h src/globs/graphics/shader.h \
+ src/globs/graphics/texture.h
+shadergl.o: src/globs/graphics/shadergl.cpp src/globs/graphics/shadergl.h \
+ src/globs/graphics/shader.h src/globs/graphics/vert.h \
+ src/globs/graphics/glm.h src/globs/graphics/../util/utility.h \
+ src/globs/graphics/../util/stringintern.h src/globs/graphics/texture.h \
+ src/globs/graphics/glwrapper.h src/globs/graphics/../util/log.h
+shaderloader.o: src/globs/graphics/shaderloader.cpp \
+ src/globs/graphics/shaderloader.h src/globs/graphics/glwrapper.h \
+ src/globs/graphics/../util/stringintern.h \
+ src/globs/graphics/../util/log.h src/globs/graphics/shader.h \
+ src/globs/graphics/vert.h src/globs/graphics/glm.h \
+ src/globs/graphics/../util/utility.h src/globs/graphics/texture.h \
+ src/globs/graphics/shadergl.h
+texture.o: src/globs/graphics/texture.cpp src/globs/graphics/texture.h \
+ src/globs/graphics/../util/stringintern.h \
+ src/globs/graphics/../util/utility.h
+texturegl.o: src/globs/graphics/texturegl.cpp \
+ src/globs/graphics/texturegl.h src/globs/graphics/texture.h \
+ src/globs/graphics/../util/stringintern.h \
+ src/globs/graphics/../util/utility.h src/globs/graphics/glwrapper.h \
+ src/globs/graphics/../util/log.h
+textureloader.o: src/globs/graphics/textureloader.cpp \
+ src/globs/graphics/glwrapper.h src/globs/graphics/../util/stringintern.h \
+ src/globs/graphics/../util/log.h src/globs/graphics/textureloader.h \
+ src/globs/graphics/texture.h src/globs/graphics/../util/utility.h \
+ src/globs/graphics/imageloader.h src/globs/graphics/texturegl.h \
+ src/globs/graphics/glm.h
+vert.o: src/globs/graphics/vert.cpp src/globs/graphics/vert.h \
+ src/globs/graphics/glm.h src/globs/graphics/../util/utility.h \
+ src/globs/graphics/../util/stringintern.h
+log.o: src/globs/util/log.cpp src/globs/util/../util/log.h
+stringintern.o: src/globs/util/stringintern.cpp \
+ src/globs/util/../util/stringintern.h
+utility.o: src/globs/util/utility.cpp src/globs/util/../util/utility.h \
+ src/globs/util/log.h
+utility.o: src/globs/util/utility.cpp src/globs/util/../util/utility.h \
+ src/globs/util/log.h
+utility.o: src/globs/util/utility.cpp src/globs/util/../util/utility.h \
+ src/globs/util/log.h

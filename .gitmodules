@@ -1,0 +1,9 @@
+[submodule "src/globs"]
+	path = src/globs
+	url = https://github.com/SirEelBiscuits/globs
+[submodule "src/testsuite"]
+	path = src/testsuite
+	url = https://github.com/SirEelBiscuits/testsuite
+[submodule "src/gargamel"]
+	path = src/gargamel
+	url = https://github.com/SirEelBiscuits/gargamel

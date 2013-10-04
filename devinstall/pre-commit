@@ -1,0 +1,38 @@
+#!/bin/bash
+ 
+#this bit is experimental
+files=$(find . -regex ".*\.\(cpp\|h\)")
+ 
+todo=$(echo "$files" | xargs grep "\(TODO\|\\todo\)" | wc -l)
+echo "Todos found: $todo"
+ 
+diffed=$(echo "$files" | git diff --staged)
+added=$(echo "$diffed" | grep "^\+.*\(TODO\|\\todo\)" | wc -l)
+subbed=$(echo "$diffed" | grep "^\-.*\(TODO\|\\todo\)" | wc -l)
+ 
+[ $added -ne 0 ] && echo "You've added $added todos"
+[ $subbed -ne 0 ] && echo "You've fixed $subbed todos"
+ 
+if [ $added -ne 0 -a $subbed -ne 0 ]
+then
+	difference=$(expr $added - $subbed)
+	if [[ $difference -le 0 ]] 
+	then
+		echo "for a net reduction of $(expr 0 - $difference)"
+		echo "good job!"
+	else
+		echo "for a net increase of $difference"
+		echo "bad times"
+	fi
+fi
+
+deletemes=$(echo "$files" | xargs grep "DELETEME" | wc -l) 
+ 
+if [[ $deletemes -ne 0 ]]
+then
+    echo
+    echo "You may not check in as there are $deletemes DELETEME lines:"
+    echo "$files" | xargs grep -n --color "DELETEME" #This is duped because of echos weird behaviour
+    exit 1
+fi
+exit 0
